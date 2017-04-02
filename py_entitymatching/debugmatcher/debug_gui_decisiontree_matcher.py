@@ -52,10 +52,10 @@ def _vis_debug_dt(matcher, train, test, exclude_attrs, target_attr,
     """
 
     try:
-        from PyQt4 import QtGui
+        from PyQt5 import QtWidgets
         from py_entitymatching.gui.debug_gui_base import MainWindowManager
     except ImportError:
-        raise ImportError('PyQt4 is not installed. Please install PyQt4 to use '
+        raise ImportError('PyQt5 is not installed. Please install PyQt5 to use '
                       'GUI related functions in py_entitymatching.')
 
 
@@ -129,9 +129,9 @@ def _vis_debug_dt(matcher, train, test, exclude_attrs, target_attr,
 
 
 
-    em._viewapp = QtGui.QApplication.instance()
+    em._viewapp = QtWidgets.QApplication.instance()
     if em._viewapp is None:
-        em._viewapp = QtGui.QApplication([])
+        em._viewapp = QtWidgets.QApplication([])
     app = em._viewapp
 
 
